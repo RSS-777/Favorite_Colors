@@ -1,0 +1,183 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    min-width: 330px;
+}
+
+.root {
+    min-height: 100vh;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background-image: url('./images/fone-color.jpg');
+    background-size: cover;
+    background-position: center -100px;
+}
+
+.h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin: 30px auto;
+    color: transparent;
+    display: inline-block;
+    background-image: url('./images/text-color.png');
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.button {
+    font-size: 1.2rem;
+    margin: 20px;
+    width: 250px;
+    align-self: center;
+    border-radius: 16px;
+    background-color: rgb(225, 213, 207);
+    font-weight: 700;
+    color: blue;
+    padding: 5px;
+    border: 1px solid blue;
+    box-shadow: 2px 2px 8px 2px black;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 1px 1px 4px 1px black;
+    background-color: rgb(227, 178, 153);
+    color: rgb(255, 38, 38);
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    background-image: linear-gradient(45deg, rgb(248, 248, 165), rgb(143, 250, 143), rgb(248, 137, 137), rgb(145, 145, 253));
+}
+
+.element {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px 1px black;
+    flex: 1.5 1 120px;
+}
+
+.input {
+    width: 0;
+    height: 0;
+}
+
+.input:not(:checked)::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('./icons/open.png');
+    background-size: cover;
+    position: relative;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.input:checked::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('./icons/lock.png');
+    background-size: cover;
+    position: relative;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.input::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid white;
+    background-color: rgb(255, 224, 175);
+    z-index: 1;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    box-shadow: 2px 2px 6px 1px black;
+}
+
+.input:hover::after {
+    background-color: rgb(255, 160, 128);
+    box-shadow: 1px 1px 4px 1px black;
+}
+
+
+.code-color {
+    position: absolute;
+    bottom: 0;
+    font-size: 16px;
+    height: 18px;
+    padding: 1px 4px;
+    background-color: blanchedalmond;
+    border: 2px solid black;
+    color: blue;
+    border-radius: 10px;
+}
+
+.massage {
+    font-size: 16px;
+    margin: 10px;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 1px white;
+}
+
+@media (max-width: 766px) {
+
+    html,
+    body {
+        font-size: 18px;
+    }
+
+    .header {
+        background-position: center 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    html,
+    body {
+        font-size: 13px;
+    }
+
+    .header {
+        background-size: 500px;
+        background-position: center 0;
+    }
+
+    .h1 {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        margin-top: 60px;
+        margin-bottom: 10px;
+        background-image: url('./images/text-color.png');
+    }
+}
