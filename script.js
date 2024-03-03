@@ -23,7 +23,7 @@ const randomColor = () => {
    return '#' + '0'.repeat(6 - color.length) + color
 }
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 50; i++) {
    const element = document.createElement('div');
    const input = document.createElement('input');
    const codeColor = document.createElement('p');
@@ -44,10 +44,11 @@ function handleColors() {
    arrElements.forEach(({ element, input, codeColor }) => {
       main.append(element)
       element.classList.add('element')
+      const color = randomColor();
 
       if (!input.checked) {
-         element.style.background = randomColor()
-         codeColor.innerText = randomColor()
+         element.style.background = color
+         codeColor.innerText = color
       }
    })
 }
